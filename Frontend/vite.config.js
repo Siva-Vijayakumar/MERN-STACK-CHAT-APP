@@ -6,4 +6,7 @@ export default defineConfig({
     tailwindcss(),
     react(), // ✅ React plugin is necessary
   ],
+  build: {
+    outDir: 'dist' // Ensure this matches your expected build directory
+  }
 });
