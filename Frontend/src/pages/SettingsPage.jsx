@@ -1,15 +1,14 @@
-import React from 'react'
-import { THEMES } from '../constants';
-import { Send } from 'lucide-react';
-import { useThemeStore } from '../store/useThemeStore';
+import { THEMES } from "../constants";
+import { useThemeStore } from "../store/useThemeStore";
+import { Send } from "lucide-react";
 
 const PREVIEW_MESSAGES = [
-  { id: 1, text: "Hey! How's it going ?", isSent:false },
-  { id: 2, text: "I'm doing great! Just Working on some new features.", isSent:true },
+  { id: 1, content: "Hey! How's it going?", isSent: false },
+  { id: 2, content: "I'm doing great! Just working on some new features.", isSent: true },
 ];
 
 const SettingsPage = () => {
-  const {theme, setTheme} = useThemeStore();
+  const { theme, setTheme } = useThemeStore();
 
   return (
     <div className="h-screen container mx-auto px-4 pt-20 max-w-5xl">
@@ -58,7 +57,7 @@ const SettingsPage = () => {
                       J
                     </div>
                     <div>
-                      <h3 className="font-medium text-sm">Mike</h3>
+                      <h3 className="font-medium text-sm">John Doe</h3>
                       <p className="text-xs text-base-content/70">Online</p>
                     </div>
                   </div>
@@ -77,7 +76,7 @@ const SettingsPage = () => {
                           ${message.isSent ? "bg-primary text-primary-content" : "bg-base-200"}
                         `}
                       >
-                        <p className="text-sm">{message.text}</p>
+                        <p className="text-sm">{message.content}</p>
                         <p
                           className={`
                             text-[10px] mt-1.5
@@ -113,6 +112,5 @@ const SettingsPage = () => {
       </div>
     </div>
   );
-}
-
-export default SettingsPage
+};
+export default SettingsPage;
